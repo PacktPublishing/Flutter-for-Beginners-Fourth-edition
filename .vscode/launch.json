@@ -1,0 +1,75 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Chapter 01",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter01/main.dart"
+        },
+        {
+            "name": "Chapter 06",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter06/main.dart"
+        },
+        {
+            "name": "Chapter 07",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter07/main.dart"
+        },
+        {
+            "name": "Chapter 08",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter08/main.dart"
+        },
+        {
+            "name": "Chapter 09",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter09/main.dart"
+        },
+        {
+            "name": "Chapter 10",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter10/main.dart"
+        },
+        {
+            "name": "Chapter 11",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter11/main.dart"
+        },
+        {
+            "name": "Chapter 12",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter12/main.dart"
+        },
+        {
+            "name": "Chapter 13",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter13/main.dart"
+        },
+        {
+            "name": "Example (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/chapter13/main.dart"
+        },
+        {
+            "name": "Example (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
