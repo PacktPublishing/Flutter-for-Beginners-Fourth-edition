@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/Chapter06/football_ground_details_widget.dart';
+import 'package:hello_world/Chapter08/football_ground_details_widget.dart';
 import 'package:hello_world/chapter08/go_router/football_ground_list_widget.dart';
-import 'package:hello_world/Chapter01/football_ground_button_widget.dart';
+import 'package:hello_world/Chapter08/football_ground_button_widget.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {

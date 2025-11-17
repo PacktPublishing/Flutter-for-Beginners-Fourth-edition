@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/Chapter06/football_ground_details_widget.dart';
-import 'package:hello_world/Chapter01/football_ground_button_widget.dart';
+import 'package:hello_world/Chapter08/football_ground_button_widget.dart';
 
 class FootballGroundListWidget extends StatelessWidget {
   const FootballGroundListWidget({super.key});
@@ -13,19 +12,46 @@ class FootballGroundListWidget extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListTile(
-            leading: Icon(Icons.location_on),
-            title: FootballGroundButtonWidget(
-              footballGroundName: 'Middlesbrough FC',
+          InkWell(
+            onTap: () {
+              // optional: navigate or handle tap
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+              child: Row(
+                children: [
+                  const Icon(Icons.location_on),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FootballGroundButtonWidget(
+                      footballGroundName: 'Middlesbrough FC',
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.location_on),
-            title: Text('Everton FC'),
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            child: Row(
+              children: const [
+                Icon(Icons.location_on),
+                SizedBox(width: 12),
+                Expanded(child: Text('Everton FC')),
+              ],
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.location_on),
-            title: Text('Forest Green Rovers FC'),
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            child: Row(
+              children: const [
+                Icon(Icons.location_on),
+                SizedBox(width: 12),
+                Expanded(child: Text('Forest Green Rovers FC')),
+              ],
+            ),
           ),
         ],
       ),
