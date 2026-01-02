@@ -41,6 +41,12 @@ void main() {
     List preFilledDynamicList = [1, 2, 3];
     print(preFilledDynamicList[0]); // Prints 1
     print(preFilledDynamicList.length); // Prints 3
+    preFilledDynamicList.add(1);
+    print(preFilledDynamicList); // Prints [1, 2, 3, 1]
+    preFilledDynamicList.remove(1);
+    print(preFilledDynamicList); // Prints [2, 3, 1]
+    preFilledDynamicList.removeAt(0);
+    print(preFilledDynamicList); // Prints [3, 1]
   }
 
   {
@@ -49,6 +55,17 @@ void main() {
     fixedList[0] = "Hello"; // Replace the value at index 0
     print(fixedList[0]); // Prints "Hello";
     print(fixedList[1]); // Prints "World";
+  }
+
+  {
+    Set numbers = {}; // Creates an empty Set
+    numbers.add(1);
+    numbers.add(2);
+    print(numbers); // Prints {1, 2}
+    numbers.add(2); // duplicate ignored
+    print(numbers); // Prints {1, 2}
+    numbers.remove(1);
+    print(numbers); // Prints {2}
   }
 
   {

@@ -11,6 +11,24 @@
             "program": "lib/chapter01/main.dart"
         },
         {
+            "name": "Chapter 02",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter02/main.dart"
+        },
+        {
+            "name": "Chapter 04",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter04/main.dart"
+        },
+        {
+            "name": "Chapter 05",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/chapter05/main.dart"
+        },
+        {
             "name": "Chapter 06",
             "request": "launch",
             "type": "dart",
