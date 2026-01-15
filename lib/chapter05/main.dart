@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/chapter05/button_types.dart';
 import 'package:hello_world/chapter05/football_ground_button_widget.dart';
+import 'package:hello_world/chapter05/selection_types.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,6 +110,26 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text('You have pushed the button this many times:'),
             Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
             FootballGroundButtonWidget(footballGroundName: "Riverside $_counter"),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ButtonTypes(),
+                  ),
+                );
+              },
+              child: Text("Button types"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SelectionTypes(),
+                  ),
+                );
+              },
+              child: Text("Selection types"),
+            ),
           ],
         ),
       ),

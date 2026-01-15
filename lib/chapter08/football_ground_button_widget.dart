@@ -6,7 +6,7 @@ class FootballGroundButtonWidget extends StatelessWidget {
   final String footballGroundName;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       child: Text(footballGroundName),
       onPressed: () {
         Navigator.of(context).push(

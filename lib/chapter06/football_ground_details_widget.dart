@@ -11,14 +11,17 @@ class FootballGroundDetailsWidget extends StatefulWidget {
 
 class _FootballGroundDetailsWidgetState extends State<FootballGroundDetailsWidget> {
   late int _visitCounter;
-  final _ratingController = TextEditingController.fromValue(
-    TextEditingValue(text: "0"),
-  );
   String _rating = "0";
+  late TextEditingController _ratingController;
 
   @override
   void initState() {
     super.initState();
+
+    _ratingController = TextEditingController.fromValue(
+      TextEditingValue(text: "0"),
+    );
+
     // Could be initialised from a database call
     _visitCounter = 0;
   }
