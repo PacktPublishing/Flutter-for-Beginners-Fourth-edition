@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:vector_math/vector_math.dart' as vector_math;
+import 'package:vector_math/vector_math_64.dart' as vector_math_64;
 
 class RotationAnimations extends StatefulWidget {
   const RotationAnimations({super.key});
@@ -29,7 +31,7 @@ class _RotationAnimationsState extends State<RotationAnimations> with SingleTick
     );
     controller.addListener(() {
       setState(() {
-        _angle = (controller.value * 360.0) * (math.pi / 180);
+        _angle = vector_math.radians(controller.value * 360.0);
       });
     });
     return controller;
@@ -123,6 +125,17 @@ class _RotationAnimationsState extends State<RotationAnimations> with SingleTick
             _controller.forward();
           }
         },
+      ),
+    );
+  }
+
+  _scaleTransformButton() {
+    return Transform(
+      transform: Matrix4.identity()..scaleByVector3(vector_math_64.Vector3(2.0, 2.0, 1.0)),
+      alignment: Alignment.center,
+      child: ElevatedButton(
+        child: Text("Scaled button"),
+        onPressed: () {},
       ),
     );
   }
