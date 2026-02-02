@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/chapter05/button_types.dart';
 import 'package:hello_world/chapter05/football_ground_button_widget.dart';
+import 'package:hello_world/chapter05/list_view_example.dart';
+import 'package:hello_world/chapter05/long_column.dart';
 import 'package:hello_world/chapter05/selection_types.dart';
 
 void main() {
@@ -129,6 +131,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Text("Selection types"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => LongColumn(),
+                  ),
+                );
+              },
+              child: Text("Long column Example"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ListViewExample(),
+                  ),
+                );
+              },
+              child: Text("List view Example"),
             ),
           ],
         ),
