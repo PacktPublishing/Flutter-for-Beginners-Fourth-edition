@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/Chapter08/football_ground_button_widget.dart';
+import 'package:hello_world/chapter07/football_ground_details_widget.dart';
 
 class FootballGroundListWidget extends StatelessWidget {
   const FootballGroundListWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,60 +11,23 @@ class FootballGroundListWidget extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          InkWell(
-            onTap: () {
-              // optional: navigate or handle tap
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-              child: Row(
-                children: [
-                  const Icon(Icons.location_on),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: FootballGroundButtonWidget(
-                      footballGroundName: 'Middlesbrough FC',
-                    ),
-                  ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      alignment: Alignment.bottomCenter,
-                      backgroundColor: WidgetStatePropertyAll(Colors.green),
-                      // backgroundColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
-                      //   if (states.contains(WidgetState.pressed)) {
-                      //     return Colors.red;
-                      //   }
-                      //   return Colors.green;
-                      // }),
-                    ),
-                    onPressed: () {},
-                    child: const Text('Example'),
-                  ),
-                ],
+          ListTile(
+            leading: Icon(Icons.location_on),
+            title: Text('Middlesbrough FC'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FootballGroundDetailsWidget(footballGroundName: "Middlesbrough FC"),
               ),
             ),
           ),
-          const Divider(height: 1),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-            child: Row(
-              children: const [
-                Icon(Icons.location_on),
-                SizedBox(width: 12),
-                Expanded(child: Text('Everton FC')),
-              ],
-            ),
+          ListTile(
+            leading: Icon(Icons.location_on),
+            title: Text('Everton FC'),
           ),
-          const Divider(height: 1),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-            child: Row(
-              children: const [
-                Icon(Icons.location_on),
-                SizedBox(width: 12),
-                Expanded(child: Text('Forest Green Rovers FC')),
-              ],
-            ),
+          ListTile(
+            leading: Icon(Icons.location_on),
+            title: Text('Forest Green Rovers FC'),
           ),
         ],
       ),

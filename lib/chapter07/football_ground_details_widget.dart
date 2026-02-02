@@ -27,7 +27,46 @@ class _FootballGroundDetailsWidgetState extends State<FootballGroundDetailsWidge
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(widget.footballGroundName),
+        Text(
+          widget.footballGroundName,
+          style: TextStyle(
+            backgroundColor: Color.fromRGBO(50, 168, 82, 1),
+            color: Colors.red,
+            fontSize: 14,
+            fontWeight: FontWeight.w300,
+            fontStyle: FontStyle.italic,
+            letterSpacing: 2,
+            wordSpacing: 3,
+            overflow: TextOverflow.fade,
+            decoration: TextDecoration.underline,
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: Colors.red,
+                width: 3,
+              ),
+            ),
+          ),
+          child: Text(
+            widget.footballGroundName,
+          ),
+        ),
+        Container(
+          decoration: ShapeDecoration(
+            shape: StadiumBorder(
+              side: BorderSide(
+                color: Colors.green,
+                width: 6,
+              ),
+            ),
+          ),
+          child: Text(
+            widget.footballGroundName,
+          ),
+        ),
         Image.asset('assets/images/exampleGround.jpg'),
         Row(
           children: [
