@@ -6,6 +6,15 @@ class Player {
   // modified to print the new static field "nameLabel"
 }
 
+class PlayerWithStaticPrint {
+  String? firstName;
+  String? lastName;
+  static String nameLabel = "Player name:";
+  static void printsPlayer(Player person) {
+    print("$nameLabel ${person.firstName} ${person.lastName}");
+  }
+}
+
 main() {
   Player somePlayer = Player();
   somePlayer.firstName = "Wilf";
@@ -22,4 +31,9 @@ main() {
   // prints Footballer name: Wilf Mannion
   print(anotherPlayer.fullName);
   // prints Footballer name: George Camsell
+  Player finalPlayer = Player();
+  finalPlayer.firstName = "Jonny";
+  finalPlayer.lastName = "Howson";
+  PlayerWithStaticPrint.printsPlayer(finalPlayer);
+  // prints Player name: Jonny Howson
 }
