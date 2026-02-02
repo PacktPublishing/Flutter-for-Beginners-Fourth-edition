@@ -51,7 +51,7 @@ void main() {
 
   {
     List fixedList = List.filled(3, "World");
-    fixedList.add("Hello"); // Error
+    //fixedList.add("Hello"); // Error
     fixedList[0] = "Hello"; // Replace the value at index 0
     print(fixedList[0]); // Prints "Hello";
     print(fixedList[1]); // Prints "World";
@@ -98,7 +98,7 @@ void main() {
     print("The string is: $someString"); // prints The string is: Happy string
     // No curly brackets were required
     print("The string length is: ${someString.length}");
-    // prints The string length is: 16
+    // prints The string length is: 12
     // Curly brackets were required
     print("The string length is: $someString.length");
     // prints The string length is: Happy string.length
@@ -113,6 +113,12 @@ void main() {
   {
     final defaultLocation = "Staithes"; // String type inferred from value
     const defaultStars = 3; // int type inferred from value
+  }
+
+  {
+    final json = {'id': "123", 'number': 42};
+    final id = json['id'] as String;
+    print("json id is: $id");
   }
 
   {
