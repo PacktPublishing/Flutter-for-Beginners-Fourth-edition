@@ -28,35 +28,37 @@ class _FootballGroundDetailsWidgetState extends State<FootballGroundDetailsWidge
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(widget.footballGroundName),
-        Image.asset('assets/images/exampleGround.jpg'),
-        Row(
-          children: [
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  _visitCounter++;
-                });
-              },
-              icon: const Icon(Icons.sports_soccer),
-            ),
-            Text(_visitCounter.toString()),
-          ],
-        ),
-        TextField(
-          controller: _ratingController,
-        ),
-        TextButton(
-          onPressed: () {
-            setState(() {
-              _rating = _ratingController.text;
-            });
-          },
-          child: const Text('Submit Rating'),
-        ),
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          Text(widget.footballGroundName),
+          Image.asset('assets/images/exampleGround.jpg'),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    _visitCounter++;
+                  });
+                },
+                icon: const Icon(Icons.sports_soccer),
+              ),
+              Text(_visitCounter.toString()),
+            ],
+          ),
+          TextField(
+            controller: _ratingController,
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _rating = _ratingController.text;
+              });
+            },
+            child: const Text('Submit Rating'),
+          ),
+        ],
+      ),
     );
   }
 
