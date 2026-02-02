@@ -3,10 +3,10 @@ import 'package:hello_world/chapter04/player_4.dart';
 class YouthPlayer extends Player {
   String nickName;
   YouthPlayer(
-    String firstName,
-    String lastName,
+    super.firstName,
+    super.lastName,
     this.nickName,
-  ) : super(firstName, lastName);
+  );
   @override
   String toString() => "${getFullName()}, aka $nickName";
 }
