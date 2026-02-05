@@ -12,32 +12,16 @@ class FootballGroundDetailsWidget extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Image.asset('assets/images/exampleGround.jpg'),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Icon(
-                    Icons.sports_soccer,
-                    size: 50,
-                  ),
-                ],
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-                child: Text('Favourite'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-                child: Text('Back'),
-              ),
-            ],
+          Image.asset(
+            'assets/images/exampleGround.jpg',
+          ),
+          Positioned(
+            bottom: 30,
+            right: 30,
+            child: Icon(
+              Icons.sports_soccer,
+              size: 50,
+            ),
           ),
         ],
       ),

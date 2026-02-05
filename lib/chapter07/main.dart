@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/chapter05/football_ground_button_widget.dart';
+import 'package:hello_world/chapter07/football_ground_button_widget.dart';
+import 'package:hello_world/chapter07/football_ground_details_container.dart';
+import 'package:hello_world/chapter07/football_ground_details_text_style.dart';
+import 'package:hello_world/chapter07/football_ground_details_underline.dart';
+import 'package:hello_world/chapter07/football_ground_list_tile_example.dart';
 import 'package:hello_world/chapter07/football_ground_list_widget_example.dart';
-import 'package:hello_world/chapter07/slivers.dart';
+import 'package:hello_world/chapter07/slivers_flexible_header.dart';
+import 'package:hello_world/chapter07/slivers_list_long.dart';
+import 'package:hello_world/chapter07/slivers_list_short.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,58 +62,121 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FootballGroundButtonWidget(footballGroundName: "Whitby"),
-            ElevatedButton(
-              style: ButtonStyle(
-                alignment: Alignment.bottomCenter,
-                backgroundColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
-                  if (states.contains(WidgetState.pressed)) {
-                    return Colors.red;
-                  }
-                  return Colors.green;
-                }),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => FootballGroundDetailsTextStyle(
+                      name: "Whitby",
+                      description: "A town in the North East of England etched into history by Dracula",
+                    ),
+                  ),
+                ),
+                child: Text('Whitby'),
               ),
-              onPressed: () => {},
-              child: Text('Example'),
-            ),
-            ElevatedButton(
-              onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-              child: Text("Select football ground"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('The parmo is a famous food from Teesside.'),
-                  ),
-                );
-              },
-              child: Text('Show SnackBar'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => FootballGroundListWidget(),
+                    builder: (context) => FootballGroundDetailsUnderlined(
+                      name: "Saltburn",
+                      description: "Saltburn-by-the-Sea, normally referred to as Saltburn, is the North East's premier surfing destination.",
+                    ),
                   ),
-                );
-              },
-              child: Text('List example'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
+                ),
+                child: Text('Saltburn underlined'),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SliversExample(),
+                    builder: (context) => FootballGroundDetailsContainer(
+                      name: "Saltburn",
+                      description: "Saltburn-by-the-Sea, normally referred to as Saltburn, is the North East's premier surfing destination.",
+                    ),
                   ),
-                );
-              },
-              child: Text('Slivers example'),
-            ),
-          ],
+                ),
+                child: Text('Saltburn stadium border'),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => FootballGroundListTileExample(),
+                  ),
+                ),
+                child: Text('List tile'),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  alignment: Alignment.bottomCenter,
+                  backgroundColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
+                    if (states.contains(WidgetState.pressed)) {
+                      return Colors.red;
+                    }
+                    return Colors.green;
+                  }),
+                ),
+                onPressed: () => {},
+                child: Text('Example'),
+              ),
+              FootballGroundButtonWidget(footballGroundName: "Middlesbrough"),
+              ElevatedButton(
+                onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+                child: Text("Select football ground"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('The parmo is a famous food from Teesside.'),
+                    ),
+                  );
+                },
+                child: Text('Show SnackBar'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => FootballGroundListWidget(),
+                    ),
+                  );
+                },
+                child: Text('List example'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SliversListShort(),
+                    ),
+                  );
+                },
+                child: Text('Slivers short list'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SliversListLong(),
+                    ),
+                  );
+                },
+                child: Text('Slivers long list'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SliversFlexibleHeader(),
+                    ),
+                  );
+                },
+                child: Text('Slivers flexible header example'),
+              ),
+            ],
+          ),
         ),
       ),
     );
