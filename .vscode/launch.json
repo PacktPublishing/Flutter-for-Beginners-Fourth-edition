@@ -77,17 +77,18 @@
             "program": "lib/chapter13/main.dart"
         },
         {
-            "name": "Example (profile mode)",
+            "name": "Chapter 13 - profile mode",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
             "program": "lib/chapter13/main.dart"
         },
         {
-            "name": "Example (release mode)",
+            "name": "Chapter 13 - release mode",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "program": "lib/chapter13/main.dart"
         }
     ]
 }
